@@ -5,8 +5,8 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-first-book">
-    <title>My First Book</title>
-    <subtitle>Let's see what this can do!</subtitle>
+    <title>Lipschitz-Optimierung</title>
+    <subtitle>Ausarbeitung im Rahmen des Seminars zur Optimierung bei Prof. Patrick Mehlitz</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />

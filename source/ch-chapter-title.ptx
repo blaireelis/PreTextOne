@@ -1,13 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-chapter-title" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Chapter Title</title>
+  <title>Motivation</title>
 
-  <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
+ <p>
+			Wir betrachten das Programmierproblem
+		</p>
 
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
+<fact>
+		<p>
+			<term>Problem 1</term>.  Sei <m>f\colon \mathbb{R}^n \rightarrow \mathbb{R}</m> eine Funktion. Gesucht ist eine Minimalstelle von <m>f</m> unter drei Arten von Nebenbedingungen:
+		</p>
+
+		<p><ol>
+			<li>
+					<p>
+						Ungleichungsnebenbedingungen: <m>g_i(x) \leq 0 \, \forall i \in \{1, \ldots, p\}</m>, für <m>g_i</m> reelwertige Funktionen auf <m>\mathbb{R}^n</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						Gleichungsnebenbedingungen: <m>h_j(x) = 0 \, \forall j \in \{1, \ldots, m\}</m>, für <m>h_j</m> reelwertige Funktionen auf <m>\mathbb{R}^n</m>.
+					</p>
+			</li>
+
+			<li>
+					<p>
+						Abstrakte Nebenbedingungen: <m>x \in C</m> für <m>C \subseteq \mathbb{R}^n</m> abgeschlossen.
+					</p>
+			</li>
+
+		</ol></p></fact>
+
+<remark>
+		<p>
+			<term>Bemerkung 1</term>.  Wir erlauben hierbei die Fälle <m>p=0</m>, <m>m=0</m> und <m>C = \mathbb{R}^n</m> sodass also bspw. auch Probleme die nur Gleichungsnebenbedinungen haben abgedeckt sind.
+		</p><!--</remark>-->
+
+		<p>
+			Zur Lösung eines solchen Problems wird oft eine notwendige Optimalitätsbedingung genutzt, sodass es dann vergleichsweise leichter ist, unter den die Bedingung erfüllenden Punkten einen optimalen auszuwählen. Solche Methoden sind schon aus der Suche nach Minima und Maxima im Schulunterricht bekannt: Man bestimme alle Stellen an denen <m>f'(x) = 0</m> gilt und untersuche diese näher.<!-- linebreak -->Eine weitere solche Bedingung begegnet uns in der Vorlesung Analysis II: die Lagrange’sche Multiplikatorenregel.
+		</p>
+  </remark>
+
+<theorem xml:id="thm:standard_KKT">
+		<title>Lagrange’sche Multiplikatorenregel</title>  <statement> <p>Sei TEST <m>U</m> eine offene 
+			Umgebung von <m>\bar x\in\mathbb{R}^{n}</m>, <m>f\colon U\rightarrow \mathbb{R}</m> und
+			 <m>h\colon U\rightarrow \mathbb{R}^m</m> stetig differenzierbar und <m>Dh(\bar x)</m> 
+			 besitze vollen Zeilenrang. Hat die Funktion <m>f</m> unter der Nebenbedingung 
+			 <m>h(x)=0</m> an der Stelle <m>\bar x</m> ein lokales Extremum, so gibt es ein
+			  <m>\bar \lambda\in\mathbb{R}^m </m> derart, dass die Funktion 
+			  <men xml:id="eqklassischeLagrangeF">
+        \mathcal{L}(x,\lambda) := f(x)+\langle \lambda , h(x)\rangle = f(x)+\sum_{j=1}^m \lambda_j  h_j(x)
+</men> 
+an der Stelle <m>(\bar x,\bar\lambda)</m> einen stationären Punkt hat.
+		</p>
+  </statement>
+  </theorem>
+
+		<p>
+			Die Regel aus <xref ref="thm:standard_KKT" /> kann nun also bei der Lösung von <xref ref="Problem" /> behilflich sein - allerdings zunächst nur unter Gleichungsnebenbedingungen und wenn <m>f</m> und <m>h</m> stetig differenzierbar sind.<!-- linebreak -->Erstere Einschränkung lässt sich mit gängigen Methoden zumindest auf Ungleichungsnebenbedingungen erweitern. Weitere Resultate erweitern die Bedingung für abstrakte Nebenbedingungen unter gewissen Anforderungen an die Menge <m>C</m>. Die Ausweitung auf allgemeinere Funktionen <m>f</m> und <m>h</m> erfordert jedoch die Verwendung eines anderen Ableitungsbegriffes. Dies ist eine der zentralen Anwendungen der Lipschitz-Optimierung, welche wir anhand von <xref ref="Clarke"></xref> einführen.<!-- linebreak -->Zur Motivation und Veranschaulichung der hier eingeführten Konzepte betrachten wir im Rahmen dieser Ausarbeitung das folgende Beispiel:
+		</p>
+  
+
+<example>
+		<p>
+			<term>Beispiel 3</term>.  Sei <m>f \colon \mathbb{R}^n \rightarrow \mathbb{R}</m> eine stetig differenzierbare Funktion und <m>\sigma &gt; 0</m> eine Konstante. Wir betrachten die Zielfunktion <me>\begin{equation}
+        \varphi(x) := f(x) + \sigma (\left\Vert x \right\Vert_1-\left\Vert x \right\Vert_2)
+\end{equation}</me> die unter den oben angegebenen Nebenbedingungen zu minimieren ist.
+		</p>
+
+		<p>
+			Man beachte zunächst, dass <m>\left\Vert x \right\Vert_1 \geq \left\Vert x \right\Vert_2</m> für alle <m>x \in \mathbb{R}^n</m> gilt: <me>\begin{equation*}
+  \label{Normungleichung}
+        \left\Vert x \right\Vert_2^2 
+        = 
+        \sum_{i=1}^n x_i^2 
+        \leq 
+        \sum_{i=1}^n x_i^2 
+        +  
+        \sum_{i \neq j} |x_i| |x_j| 
+        = 
+        \left (\sum_{i=1}^n |x_i| \right )^2 
+        = 
+        \left\Vert x \right\Vert_1^2.
+  \end{equation*}</me> Der Term <m>\sigma (\left\Vert x \right\Vert_1-\left\Vert x \right\Vert_2)</m> wird also niemals negativ. Zudem lässt sich an <xref ref="Normungleichung" /> erkennen, dass der Term gerade dann klein ist, wenn <m>\sum_{i \neq j} |x_i| |x_j|</m> klein ist, also wenn möglichst viele der <m>x_i</m> null sind. Hierbei werden also <m>x \in \mathbb{R}^n</m> mit dünner Besetzungsstruktur bevorzugt, die Zielfunktion bleibt dabei aber stetig. Jedoch ist <m>\varphi</m> offensichtlich nicht differenzierbar und die Lagrange’sche Multiplikatorenregel somit nicht anwendbar.
+		</p></example>
+
 
 </chapter>

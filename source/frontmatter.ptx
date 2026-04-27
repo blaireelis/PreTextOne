@@ -7,12 +7,12 @@
   <bibinfo>
   
     <author>
-      <personname>You</personname>
-      <department>Your department</department>
-      <institution>Your institution</institution>
+      <personname>Sofia Raible</personname>
+      <department>FB 12</department>
+      <institution>Philipps-Universität Marburg</institution>
     </author>
     <date>
-      <today />
+      Wintersemester 2022/23
     </date>
 
     <website>
@@ -21,7 +21,7 @@
 
     <copyright>
       <year>2020<ndash />2024</year>
-      <holder>You</holder>
+      <holder>Andreas Lochmann</holder>
       <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
       </shortlicense>
     </copyright>
