@@ -16,6 +16,24 @@
 
   <!-- <index> <title>Index</title> <index-list/> </index> -->
 
+  <references xml:id="refs-">
+<biblio type="bibtex" xml:id="Clarke">
+<author>Clarke, Frank H.</author>
+<title>Optimization and Nonsmooth Analysis</title>
+<publisher>Society for Industrial and Applied Mathematics</publisher>
+<year>1990</year>
+<note><p>https://epubs.siam.org/doi/abs/10.1137/1.9781611971309</p></note>
+</biblio>
+
+<biblio type="bibtex" xml:id="WernerFA">
+<author>Werner, Dirk</author>
+<title>Funktionalanalysis</title>
+<publisher>Springer Spektrum Berlin, Heidelberg</publisher>
+<year>2018</year>
+<note><p>https://doi.org/10.1007/978-3-662-55407-4</p></note>
+</biblio>
+ </references>
+
   <colophon>
     <p> This book was authored in <pretext />. </p>
   </colophon>

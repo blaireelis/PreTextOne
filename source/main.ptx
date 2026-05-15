@@ -12,8 +12,10 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./ch-motivation.ptx" />
 
+    
+    <xi:include href="./ch-clarke-subdiff.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

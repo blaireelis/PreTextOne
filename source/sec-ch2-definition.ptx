@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-ch2-definition" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Definition</title>
+
+  <p>
+		Die Clarke’sche Richtungsableitung sowie das Clarke’sche Subdifferential sind für Lipschitz-stetige Funktionen definiert. Zur besseren Übersicht wiederholen wir die Definition der Lipschitz-Stetigkeit:
+	</p>
+
+<definition>
+  <title>Definition 2.1 Lipschitz-Stetigkeit</title> <statement> <p>Eine Funktion <m>f \colon U \subset \mathbb{R}^n \rightarrow \mathbb{R}</m> heißt <term>Lipschitz-stetig</term> mit <term>Lipschitz-Konstante</term> <m>L \geq 0</m> in <m>V \subset U</m>, falls für alle <m>x,y \in V</m> gilt: <me>
+        |f(x) - f(y)| \leq L \left\Vert x-y \right\Vert.
+</me> Sie heißt <term>lokal Lipschitz-stetig</term>, wenn für jedes <m>x \in U</m> eine Umgebung <m>x \in U_x \subset U</m> und eine Konstante <m>L_x &gt; 0</m> existieren sodass <m>f</m> in <m>U_x</m> Lipschitz-stetig mit Lipschitz-Konstante <m>L_x</m> ist.</p>
+</statement> </definition>
+
+	<p>
+		Da wir im Folgenden oft lokal Lipschitz-stetige Funktionen betrachten, formulieren wir die folgende Annahme:
+	</p>
+
+<definition xml:id="flokallip"><title>Annahme 2.2</title>  <statement> <p> Sei <m>x \in \mathbb{R}^n</m> und sei <m>f</m> nahe <m>x</m> Lipschitz-stetig mit Lipschitz-Konstante <m>L_x</m>.
+	</p></statement>
+</definition>
+
+<remark>
+		<title>Bemerkung 2.3</title>  <p>Man kann zeigen, dass alle stetig differenzierbaren Funktionen Lipschitz-stetig sind. Zudem sind alle konvexen Funktionen die auf einer kleinen Umgebung in ihrem Definitionsbereich nach oben beschränkt sind Lipschitz-stetig.	
+		Vgl. <xref ref="Clarke"></xref> </p>
+</remark>
+
+<example>
+		<title>Beispiel 2.4</title> <statement><p> Sei <m>f: \mathbb{R}^n \rightarrow \mathbb{R}</m> 
+      eine lokal Lipschitz-stetige Funktion. Wir betrachten die Funktion <m>\varphi</m> aus 
+      <xref ref="Bsp1"/>. Wir bemerken zunächst, dass die Dreiecksungleichung impliziert, 
+      dass Summen Lipschitz-stetiger Funktionen ebenfalls Lipschitz-stetig sind. Weiterhin 
+      gilt mit der (umgekehrten) Dreiecksungleichung: <md>
+        <mrow>|\sigma(\left\Vert x \right\Vert_1 - \left\Vert x \right\Vert_2) - 
+        \sigma(\left\Vert y \right\Vert_1 - \left\Vert y \right\Vert_2)| 
+        \amp \leq \sigma (|\left\Vert x \right\Vert_1 - \left\Vert y \right\Vert_1| 
+        + |\left\Vert x \right\Vert_2 - \left\Vert y \right\Vert_2|) </mrow> <mrow> \amp \leq \sigma 
+        (\left\Vert x-y \right\Vert_1 + \left\Vert x-y \right\Vert_2). </mrow>
+</md> Wegen der Äquivalenz der Normen in <m>\mathbb{R}^n</m> ist <m>\varphi</m> also Lipschitz-stetig.
+</p> </statement> </example>
+
+<definition>
+		<title>Definition 2.5 (Clarke’sche Richtungsableitung)</title>  <statement> <p>Es gelte <xref ref="flokallip" />. Dann ist die <term> Clarke’sche Richtungsableitung </term> von <m>f</m> an der Stelle <m>x</m> zur Richtung <m>v \in \mathbb{R}^n</m> definiert als <me>
+        f^{\circ}(x; v) := \limsup_{y \rightarrow x, \, t \searrow 0 }{\frac{f(y + tv) - f(y)}{t}},
+</me> für <m>y \in \mathbb{R}^n</m> und <m>t \in \mathbb{R}^+</m>.</p></statement>
+</definition>
+
+<remark xml:id="Bem1"><title>Bemerkung 2.6</title> 
+	<p><ol>
+		<li>
+			<p>
+				Der Unterschied zur klassischen Richtungsableitung liegt neben der Verwendung des <m>\limsup</m> auch in der Betrachtung des Grenzverhaltens <m>y \rightarrow x</m>.
+			</p>
+		</li>
+
+		<li>
+			<p>
+				Man bemerke, dass die Ableitung durch den Limes Superior durchaus auch für nicht Lipschitz-stetige Funktionen wohldefiniert ist. Allerdings ist die Endlichkeit der Größe dann nicht mehr sichergestellt. Tatsächlich haben wir <md>
+		        <mrow>\limsup_{y \rightarrow x, \, t \searrow 0 }{\frac{f(y + tv) - f(y)}{t}} &lt; \infty \iff \exists \, L_{v,x} &gt; 0: \exists \, \varepsilon&gt; 0: </mrow><mrow> \forall y \in \mathbb{R}^n \text{ s.t. } \left\Vert x-y \right\Vert_2 &lt; \varepsilon: \forall 0 &lt; t &lt; \varepsilon: \left | \frac{f(y + tv) - f(y)}{t} \right  | \leq L_{v,x} . </mrow>
+		</md> Zudem gilt: <me>
+		        \left | \frac{f(y + tv) - f(y)}{t} \right | \leq L \iff \left |f(y + tv) - f(y) \right | \leq \frac {L}{\left\Vert v \right\Vert} \left\Vert y +tv - y \right\Vert.
+		</me> Folglich garantiert die lokale Lipschitz-Stetigkeit also die Endlichkeit der Clarke’schen Richtungsableitung für jede beliebige Richtung <m>v \in \mathbb{R}^n</m><fn>
+				Man bemerke, dass Endlichkeit der Clarke’schen Richtungsableitung für jede Richtung <m>v \in \mathbb{R}^n</m> jedoch nicht lokale Lipschitz-stetigkeit impliziert, da die Menge <m>\{ L_{v,x} \, | \, v \in B_1(0)\}</m> nicht beschränkt sein muss.
+			</fn>.
+			</p>
+		</li>
+
+	</ol></p>
+</remark>
+
+<example xml:id="Bsp_Norm_fcirc"><title>Beispiel 2.7</title> 
+	<statement><p>Betrachte <m>f\colon \mathbb{R}^n \rightarrow \mathbb{R}; x \mapsto \left\Vert x \right\Vert</m> eine beliebige Norm auf <m>\mathbb{R}^n</m>. Dann ist <m>f</m> wegen der (umgekehrten) Dreiecksungleichung Lipschitz-stetig. Zudem gilt für <m>y,v \in \mathbb{R}^n</m> und <m>t &gt; 0</m> nach der Dreiecksungleichung: <me>
+        f(y + tv) \leq f(y) + f(tv)
+</me> und somit auch, wegen der positiven Homogenität von <m>f</m>, <me>
+        \limsup_{y\rightarrow x, \, t \searrow 0} \frac{f(y + tv) - f(y)}{t} \leq \limsup_{t \searrow 0} \frac{f(tv)}{t} = \left\Vert v \right\Vert.
+</me> Gleichzeitig gilt für <m>x = 0</m>: <md>
+        \limsup_{y\rightarrow 0, \, t \searrow 0} \frac{f(y + tv) - f(y)}{t} \geq \limsup_{t \searrow 0} \frac{f(0 + tv) - f(0)}{t} = \left\Vert v \right\Vert,
+</md> und somit <m>f^\circ(0;v) = \left\Vert v \right\Vert</m>. Für die 1-norm <m>\left\Vert \cdot \right\Vert_1</m> bemerken wir außerdem: Nach obiger Argumentation angewandt auf den Betrag als Norm auf <m>\mathbb{R}</m> gilt für alle <m>i \in \{1,\dots,n\} := [n]</m> mit <m>x_i = 0</m>: <me>
+    \limsup_{y_i\rightarrow x_i, \, t \searrow 0} \frac{|y + tv_i| - |y|}{t} = |v_i|.
+</me> Ebenfalls bestimmen wir für <m>i \in [n]</m> sodass <m>x_i \neq 0</m>: <me>
+    \limsup_{y_i\rightarrow x_i, \, t \searrow 0} \frac{|y_i + tv_i| - |y_i|}{t} = \limsup_{y_i\rightarrow x_i, \, t \searrow 0} \frac{sgn(x_i)(y_i + tv_i) - sgn(x_i)(y_i)}{t} = sgn(x_i)v_i.
+</me> Folglich gilt also wegen der Linearität des <m>\limsup</m>: <me>
+        f^\circ(x;v) = \sum_{i \in [n]; \, x_i \neq 0}{sgn(x_i) v_i} + \sum_{i \in [n]; \, x_i = 0}|v_i|
+</me></p></statement>
+</example>
+
+	<p>
+		Wir gehen im nächsten Abschnitt näher auf die Eigenschaften der Clarke’schen Richtungsableitung ein. An dieser Stelle benötigen wir jedoch bereits die folgende Proposition, die die Definition des Clarke’schen Subdifferentials motiviert.
+	</p>
+
+<proposition xml:id="PropBasicRichtung"><title> Proposition 2.8 </title>
+	<statement><p>
+		Es gelte <xref ref="flokallip" />. Dann gilt:
+	</p>
+
+	<p><ol>
+		<li>
+			<p>
+				Die Abbildung <m>v \mapsto f^\circ(x; v)</m> ist beschränkt auf <m>B_1(0)</m>, positiv homogen und subadditiv auf <m>\mathbb{R}^n</m>, und Lipschitz-stetig mit Lipschitz-Konstante <m>L_x</m>. Insbesondere gilt: <me>
+		            |f^\circ (x;v)| \leq L_x \left\Vert v \right\Vert
+		</me>
+			</p>
+		</li>
+
+		<li>
+			<p>
+				<m>f^\circ(x;v)</m> ist oberhalbstetig als Funktion in <m>(x, v)</m>.
+			</p>
+		</li>
+
+		<li>
+			<p>
+				<m>f^\circ(x;-v) = (-f)^\circ(x;v)</m>
+			</p>
+		</li>
+
+	</ol></p></statement>
+
+<proof>
+	<p>
+		Die Proposition lässt sich mithilfe gängiger Eigenschaften des <m>\limsup</m> beweisen. Die Abschätzung in (i) ergibt sich direkt aus den Berechnungen in <xref ref="Bem1"></xref>.
+</p></proof></proposition>
+
+	<p>
+		Für die Definition des Clarke’schen Subdifferentials betrachten wir den aus der Funktionalanalysis bekannten Satz von Hahn-Banach, den wir hier aus <xref ref="WernerFA"></xref> für endlich dimensionale Banachräume zitieren:
+	</p>
+
+<theorem xml:id="HahnBanach"><title>Satz 2.9 (Hahn-Banach)</title>
+	<statement><p>
+	  Sei <m>U \subset \mathbb{R}^n</m> ein Untervektorraum. Ferner seien <m>p: \mathbb{R}^n \rightarrow \mathbb{R}</m> sublinear (d.h. subadditiv und positiv homogen) und <m>l: U \rightarrow \mathbb{R}</m> linear sodass <me>
+        l(x) \leq p(x) \quad \forall x \in U.
+</me> Dann existiert eine lineare Fortsetzung <m>L: \mathbb{R}^n \rightarrow \mathbb{R}</m>, <m>L|_{U} = l</m> sodass <me>
+        L(x) \leq p(x)\quad{\forall x\in\mathbb{R}^n}.
+</me></p>
+</statement></theorem>
+
+	<p>
+		Mit der Wahl <m>U = \{0\}</m> sagt <xref ref="HahnBanach" /> also aus: Jedes sublineare Funktional auf <m>\mathbb{R}^n</m> majorisiert ein lineares Funktional auf <m>\mathbb{R}^n</m>. Laut <xref ref="PropBasicRichtung" />(i) ist <m>v \mapsto f^\circ(x; v)</m> ein solches sublineares Funktional.
+	</p>
+
+<definition><title>Definition 2.10</title>
+	<statement><p>
+		Es gelte <xref ref="flokallip"/>. Das <term>Clarke’sche Subdifferential</term> von <m>f</m> in <m>x \in \mathbb{R}^n</m> ist die Menge <md number="yes" xml:id="Eq_Def_Subdiff">
+        \partial f(x) := \left \{ \xi \in \mathbb{R}^n: f^\circ(x; v) \geq \langle \xi, v \rangle \ \forall v \in \mathbb{R}^n\right \}.
+</md>
+</p></statement></definition>
+
+<remark><title>Bemerkung 2.11</title>
+	
+		<p>Die Elemente des topologischen Dualraumes des <m>\mathbb{R}^n</m> lassen sich über das Skalarprodukt mit dem <m>\mathbb{R}^n</m> identifizieren</p>	<p>
+		Für <m>(\mathbb{R}^n, \left\Vert  \right\Vert_2)</m> ist dies die Aussage des Riesz’schen Darstellungssatzes; man beachte dass jeder <m>n</m>-dimensionale Banachraum zu diesem Raum isomorph ist. Die hier benötigte endlich-dimensionale Version lässt sich aber auch leicht direkt erkennen.
+	.</p> <p>Diese Identifikation motiviert die obige Definition: Das Subdifferential besteht aus den Vektoren, die lineare Abbildungen definieren, die von der Clarke’schen Richtungsableitung majorisiert werden. Beachte, dass die Norm im Dualraum im Allgemeinen durch <me>\left\Vert \xi \right\Vert_* := \sup \left \{|\langle \xi, x\rangle|  : x \in B_1(0) \subset \mathbb{R}^n \right \}</me> gegeben ist. Man überzeugt sich leicht, dass diese Norm genau der euklidschen Norm entspricht.
+</p></remark>
+
+<example><title>Beispiel 2.12</title>
+	<statement><p>
+	Betrachte nochmals <m>f = \left\Vert \cdot \right\Vert</m>. Dann gilt mit den Überlegungen aus <xref ref="Bsp_Norm_fcirc" />: <me>
+        \partial f(0) = \left \{ \xi \in \mathbb{R}^n: \left\Vert v \right\Vert \geq \langle \xi, v \rangle \ \forall v \in \mathbb{R}^n\right \}.
+</me> Wir bemerken zunächst, dass diese Bedingung bei der Wahl <m>v = 0</m> für alle <m>\xi \in \mathbb{R}^n</m> erfüllt ist. Wir betrachten im folgenden also nur noch <m>v \neq 0</m>: <me>
+        \left\Vert v \right\Vert \geq \langle \xi, v \rangle \ \forall v \in \mathbb{R}^n \iff 1 \geq \frac{\langle \xi, v\rangle}{\left\Vert v \right\Vert} \ \forall v \in \mathbb{R}^n\setminus\{0\}.
+</me> Wir betrachten nun zwei spezielle Fälle:
+	</p>
+
+	<p><ol>
+		<li>
+			<p>
+				<m>f = \left\Vert \cdot \right\Vert_2</m>. In diesem Fall folgt aus der Cauchy-Schwarz Ungleichung für alle <m>\xi, v \in \mathbb{R}^n</m>: <me>
+		        \frac{\langle \xi, v\rangle}{\left\Vert v \right\Vert_2} \leq \frac{\left\Vert \xi \right\Vert_2 \left\Vert v \right\Vert_2}{\left\Vert v \right\Vert_2} = \left\Vert \xi \right\Vert_2,
+		</me> wobei mit der Wahl <m>v = \xi</m> Gleichheit gilt. Folglich ist <me>
+		        1 \geq \frac{\langle \xi, v\rangle}{\left\Vert v \right\Vert} \ \forall v \in \mathbb{R}^n
+		</me> äquivalent zu <m>\left\Vert \xi \right\Vert_2 \leq 1</m> und somit <me>
+		        \partial f(0) = \bar B_{\left\Vert \cdot \right\Vert_2}(0,1).
+		</me>
+			</p>
+		</li>
+
+		<li>
+			<p>
+				<m>f = \left\Vert \cdot \right\Vert_1</m>. Mithilfe von <xref ref="Bsp_Norm_fcirc" /> können wir das Clarke’sche Subdifferential von <m>\left\Vert \cdot \right\Vert_1</m> sogar für allgemeine <m>x \in \mathbb{R}^n</m> bestimmen: Hierfür bemerken wir zunächst für alle <m>i \in [n]</m> sodass <m>x_i \neq 0</m>: <md>
+		        <mrow> f^\circ(x; -e_i) \amp = -\operatorname{sgn}(x_i) </mrow> <mrow>
+		        \langle \xi, -e_i\rangle &amp;= -\xi_i,</mrow>
+		</md> sowie <md>
+		        <mrow> f^\circ(x; e_i) \amp = \operatorname{sgn}(x_i) </mrow> <mrow> 
+		        \langle \xi, e_i\rangle \amp = \xi_i. </mrow>
+		</md> Wenn <m>\xi \in \partial f(x)</m> sein soll, muss mit der Wahl <m>v = \pm e_i</m> also gelten: <me>
+		        \operatorname{sgn}(x_i) \geq \xi_i \geq \operatorname{sgn}(x_i),
+		</me> wobei die erste Relation mit <m>v = e_i</m>, die zweite mit <m>v = -e_i</m> aus <xref ref="Eq_Def_Subdiff" /> folgt. Wir fixieren nun ein beliebiges <m>\xi \in \mathbb{R}^n</m> mit <m>\xi_i = \operatorname{sgn}(x_i)</m> wann immer <m>x_i \neq 0</m>. Die Frage ist nun, wann <m>\xi</m> im Subdifferential <m>\partial f(x)</m> liegt. Hierfür bemerken wir: <md>
+		       <mrow> \langle \xi, v\rangle = \sum_{i \in [n]; \, x_i \neq 0} \operatorname{sgn}(x_i) v_i + \sum_{i \in [n]; \, x_i = 0} \xi_i v_i </mrow><mrow>
+		        f^\circ(x;v) = \sum_{i \in [n]; \, x_i \neq 0} \operatorname{sgn}(x_i) v_i + \sum_{i \in [n]; \, x_i = 0} |v_i|.</mrow>
+		</md> Somit reduziert sich die Bedingung aus <xref ref="Eq_Def_Subdiff"/> also zu <me>
+		        \sum_{i \in [n]; \, x_i = 0} \xi_i v_i \leq \sum_{i \in [n]; \, x_i = 0} |v_i|
+		</me> für alle <m>v \in \mathbb{R}^n</m>. Dies gilt offensichtlich, wenn <m>v = 0</m> gilt. Für <m>v \neq 0</m> beobachten wir, dass <me>
+		        \max_{v \in \mathbb{R}^n\setminus \{0\}} \frac{\sum_{i \in [n]; \, x_i = 0} \xi_i v_i }{\sum_{i \in [n]; \, x_i = 0} |v_i|} = \max_{i \in [n]; \, x_i = 0} |\xi_i|.
+		</me> Also gilt <m>\xi \in \partial f(x)</m> genau dann, wenn <m>\max_{i \in [n]; \, x_i = 0} |\xi_i| \leq 1</m>. Folglich gilt: <me>
+		        \partial f(x) = \left \{ \xi \in \mathbb{R}^n : \xi_i \in \begin{cases}
+		            [-1, 1] &amp; x_i = 0\\
+		            \left \{ \operatorname{sgn}(x_i) \right \} &amp; x_i \neq 0
+		        \end{cases}, \forall i \in [n]\right \}.
+		</me>
+			</p>
+		</li>
+
+	</ol></p></statement></example>
+
+</section>
