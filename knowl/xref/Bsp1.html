@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.0.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical">
+<div class="para">
+<dfn class="terminology">Beispiel 3</dfn>. Sei <span class="process-math">\(f \colon \mathbb{R}^n \rightarrow \mathbb{R}\)</span> eine stetig differenzierbare Funktion und <span class="process-math">\(\sigma &gt; 0\)</span> eine Konstante. Wir betrachten die Zielfunktion</div>
+<div class="displaymath process-math">
+\begin{equation}
+\varphi(x) := f(x) + \sigma (\left\Vert x \right\Vert_1-\left\Vert x \right\Vert_2)\tag{1.0.2}
+\end{equation}
+</div>
+<div class="para">die unter den oben angegebenen Nebenbedingungen zu minimieren ist.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Bsp1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Man beachte zunächst, dass <span class="process-math">\(\left\Vert x \right\Vert _1 \geq \left\Vert x \right\Vert_2\)</span> für alle <span class="process-math">\(x \in \mathbb{R}^n\)</span> gilt:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Normungleichung.html">
+\begin{equation}
+\left \Vert x \right \Vert_2^2 
+= \sum_{i=1}^n x_i^2 \leq \sum_{i=1}^n x_i^2 + \sum_{i \neq j} |x_i| |x_j| 
+= \left (\sum_{i=1}^n |x_i| \right )^2 
+= \left\Vert x \right\Vert_1^2.\tag{1.0.3}
+\end{equation}
+</div>
+<div class="para">Der Term <span class="process-math">\(\sigma (\left\Vert x \right\Vert_1-\left\Vert x \right\Vert_2)\)</span> wird also niemals negativ. Zudem lässt sich an <a href="ch-motivation.html#Normungleichung" class="xref" data-knowl="./knowl/xref/Normungleichung.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.0.3">(1.0.3)</a> erkennen, dass der Term gerade dann klein ist, wenn <span class="process-math">\(\sum_{i \neq j} |x_i| |x_j|\)</span> klein ist, also wenn möglichst viele der <span class="process-math">\(x_i\)</span> null sind. Hierbei werden also <span class="process-math">\(x \in \mathbb{R}^n\)</span> mit dünner Besetzungsstruktur bevorzugt, die Zielfunktion bleibt dabei aber stetig. Jedoch ist <span class="process-math">\(\varphi\)</span> offensichtlich nicht differenzierbar und die Lagrange’sche Multiplikatorenregel somit nicht anwendbar.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Bsp1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.0.4"><a href="#Bsp1" title="Copy heading and permalink for Example 1.0.4" aria-label="Copy heading and permalink for Example 1.0.4">🔗</a></div></article><span class="incontext"><a class="internal" href="ch-motivation.html#Bsp1">in-context</a></span>
+</body>
+</html>

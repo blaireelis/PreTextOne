@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Definition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Lipschitz-Optimierung">
+<meta property="book:author" content="Sofia Raible">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.0.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.ce7e0a2163cb330f.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.f4a2ffb04bb978bb.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-first-book.html"><span class="title">Lipschitz-Optimierung</span> <span class="subtitle">Ausarbeitung im Rahmen des Seminars zur Optimierung bei Prof. Patrick Mehlitz</span></a></h1>
+<p class="byline">Sofia Raible</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-clarke-subdiff.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-clarke-subdiff.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-motivation.html" class="internal"><span class="codenumber">1</span> <span class="title">Motivation</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-clarke-subdiff.html" class="internal"><span class="codenumber">2</span> <span class="title">Die Clarke’sche Richtungsableitung und das Clarke’sche Subdifferential</span></a></div>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ch2-definition.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definition</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="refs-.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-ch2-definition"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition</span>
+</h2>
+<div class="para" id="sec-ch2-definition-2">Die Clarke’sche Richtungsableitung sowie das Clarke’sche Subdifferential sind für Lipschitz-stetige Funktionen definiert. Zur besseren Übersicht wiederholen wir die Definition der Lipschitz-Stetigkeit:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-ch2-definition-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition 2.1 Lipschitz-Stetigkeit.</span>
+</h3>
+<div class="para logical" id="sec-ch2-definition-3-2-1">
+<div class="para">Eine Funktion <span class="process-math">\(f \colon U \subset \mathbb{R}^n \rightarrow \mathbb{R}\)</span> heißt <dfn class="terminology">Lipschitz-stetig</dfn> mit <dfn class="terminology">Lipschitz-Konstante</dfn> <span class="process-math">\(L \geq 0\)</span> in <span class="process-math">\(V \subset U\text{,}\)</span> falls für alle <span class="process-math">\(x,y \in V\)</span> gilt:</div>
+<div class="displaymath process-math" id="sec-ch2-definition-3-2-1-7">
+\begin{equation*}
+|f(x) - f(y)| \leq L \left\Vert x-y \right\Vert.
+\end{equation*}
+</div>
+<div class="para">Sie heißt <dfn class="terminology">lokal Lipschitz-stetig</dfn>, wenn für jedes <span class="process-math">\(x \in U\)</span> eine Umgebung <span class="process-math">\(x \in U_x \subset U\)</span> und eine Konstante <span class="process-math">\(L_x &gt; 0\)</span> existieren sodass <span class="process-math">\(f\)</span> in <span class="process-math">\(U_x\)</span> Lipschitz-stetig mit Lipschitz-Konstante <span class="process-math">\(L_x\)</span> ist.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.1: Definition 2.1 Lipschitz-Stetigkeit"><a href="#sec-ch2-definition-3" title="Copy heading and permalink for Definition 2.1.1: Definition 2.1 Lipschitz-Stetigkeit" aria-label="Copy heading and permalink for Definition 2.1.1: Definition 2.1 Lipschitz-Stetigkeit">🔗</a></div></article><div class="para" id="sec-ch2-definition-4">Da wir im Folgenden oft lokal Lipschitz-stetige Funktionen betrachten, formulieren wir die folgende Annahme:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="flokallip"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Annahme 2.2.</span>
+</h3>
+<div class="para" id="flokallip-2-1">Sei <span class="process-math">\(x \in \mathbb{R}^n\)</span> und sei <span class="process-math">\(f\)</span> nahe <span class="process-math">\(x\)</span> Lipschitz-stetig mit Lipschitz-Konstante <span class="process-math">\(L_x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#flokallip-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.2: Annahme 2.2"><a href="#flokallip" title="Copy heading and permalink for Definition 2.1.2: Annahme 2.2" aria-label="Copy heading and permalink for Definition 2.1.2: Annahme 2.2">🔗</a></div></article><article class="remark remark-like" id="sec-ch2-definition-6"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bemerkung 2.3.</span>
+</h3>
+<div class="para" id="sec-ch2-definition-6-2">Man kann zeigen, dass alle stetig differenzierbaren Funktionen Lipschitz-stetig sind. Zudem sind alle konvexen Funktionen die auf einer kleinen Umgebung in ihrem Definitionsbereich nach oben beschränkt sind Lipschitz-stetig. Vgl. <a href="refs-.html#Clarke" class="xref" data-knowl="./knowl/xref/Clarke.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 1: Optimization and Nonsmooth Analysis">[1]</a><div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.3: Bemerkung 2.3"><a href="#sec-ch2-definition-6" title="Copy heading and permalink for Remark 2.1.3: Bemerkung 2.3" aria-label="Copy heading and permalink for Remark 2.1.3: Bemerkung 2.3">🔗</a></div></article><details id="sec-ch2-definition-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Beispiel 2.4.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-ch2-definition-7-2-1">
+<div class="para">Sei <span class="process-math">\(f: \mathbb{R}^n \rightarrow \mathbb{R}\)</span> eine lokal Lipschitz-stetige Funktion. Wir betrachten die Funktion <span class="process-math">\(\varphi\)</span> aus <a href="ch-motivation.html#Bsp1" class="xref" data-knowl="./knowl/xref/Bsp1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.0.4">Example 1.0.4</a>. Wir bemerken zunächst, dass die Dreiecksungleichung impliziert, dass Summen Lipschitz-stetiger Funktionen ebenfalls Lipschitz-stetig sind. Weiterhin gilt mit der (umgekehrten) Dreiecksungleichung:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp1.html" id="sec-ch2-definition-7-2-1-4">
+\begin{align*}
+|\sigma(\left\Vert x \right\Vert_1 - \left\Vert x \right\Vert_2) - 
+\sigma(\left\Vert y \right\Vert_1 - \left\Vert y \right\Vert_2)| 
+\amp \leq \sigma (|\left\Vert x \right\Vert_1 - \left\Vert y \right\Vert_1| 
++ |\left\Vert x \right\Vert_2 - \left\Vert y \right\Vert_2|) \\
+\amp \leq \sigma 
+(\left\Vert x-y \right\Vert_1 + \left\Vert x-y \right\Vert_2). 
+\end{align*}
+</div>
+<div class="para">Wegen der Äquivalenz der Normen in <span class="process-math">\(\mathbb{R}^n\)</span> ist <span class="process-math">\(\varphi\)</span> also Lipschitz-stetig.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.4: Beispiel 2.4"><a href="#sec-ch2-definition-7" title="Copy heading and permalink for Example 2.1.4: Beispiel 2.4" aria-label="Copy heading and permalink for Example 2.1.4: Beispiel 2.4">🔗</a></div></article></details><article class="definition definition-like" id="sec-ch2-definition-8"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition 2.5 (Clarke’sche Richtungsableitung).</span>
+</h3>
+<div class="para logical" id="sec-ch2-definition-8-2-1">
+<div class="para">Es gelte <a href="sec-ch2-definition.html#flokallip" class="xref" data-knowl="./knowl/xref/flokallip.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.1.2: Annahme 2.2">Definition 2.1.2</a>. Dann ist die <dfn class="terminology">Clarke’sche Richtungsableitung</dfn> von <span class="process-math">\(f\)</span> an der Stelle <span class="process-math">\(x\)</span> zur Richtung <span class="process-math">\(v \in \mathbb{R}^n\)</span> definiert als</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/flokallip.html" id="sec-ch2-definition-8-2-1-6">
+\begin{equation*}
+f^{\circ}(x; v) := \limsup_{y \rightarrow x, \, t \searrow 0 }{\frac{f(y + tv) - f(y)}{t}},
+\end{equation*}
+</div>
+<div class="para">für <span class="process-math">\(y \in \mathbb{R}^n\)</span> und <span class="process-math">\(t \in \mathbb{R}^+\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.5: Definition 2.5 (Clarke’sche Richtungsableitung)"><a href="#sec-ch2-definition-8" title="Copy heading and permalink for Definition 2.1.5: Definition 2.5 (Clarke’sche Richtungsableitung)" aria-label="Copy heading and permalink for Definition 2.1.5: Definition 2.5 (Clarke’sche Richtungsableitung)">🔗</a></div></article><article class="remark remark-like" id="Bem1"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bemerkung 2.6.</span>
+</h3>
+<div class="para logical" id="Bem1-2">
+<ol class="decimal" id="Bem1-2-1">
+<li id="Bem1-2-1-1">
+<div class="para" id="Bem1-2-1-1-1">Der Unterschied zur klassischen Richtungsableitung liegt neben der Verwendung des <span class="process-math">\(\limsup\)</span> auch in der Betrachtung des Grenzverhaltens <span class="process-math">\(y \rightarrow x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Bem1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#Bem1-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="Bem1-2-1-2">
+<div class="para logical" id="Bem1-2-1-2-1">
+<div class="para">Man bemerke, dass die Ableitung durch den Limes Superior durchaus auch für nicht Lipschitz-stetige Funktionen wohldefiniert ist. Allerdings ist die Endlichkeit der Größe dann nicht mehr sichergestellt. Tatsächlich haben wir</div>
+<div class="displaymath process-math" id="Bem1-2-1-2-1-1">
+\begin{gather*}
+\limsup_{y \rightarrow x, \, t \searrow 0 }{\frac{f(y + tv) - f(y)}{t}} &lt; \infty \iff \exists \, L_{v,x} &gt; 0: \exists \, \varepsilon&gt; 0: \\
+\forall y \in \mathbb{R}^n \text{ s.t. } \left\Vert x-y \right\Vert_2 &lt; \varepsilon: \forall 0 &lt; t &lt; \varepsilon: \left | \frac{f(y + tv) - f(y)}{t} \right  | \leq L_{v,x} . 
+\end{gather*}
+</div>
+<div class="para">Zudem gilt:</div>
+<div class="displaymath process-math" id="Bem1-2-1-2-1-2">
+\begin{equation*}
+\left | \frac{f(y + tv) - f(y)}{t} \right | \leq L \iff \left |f(y + tv) - f(y) \right | \leq \frac {L}{\left\Vert v \right\Vert} \left\Vert y +tv - y \right\Vert.
+\end{equation*}
+</div>
+<div class="para">Folglich garantiert die lokale Lipschitz-Stetigkeit also die Endlichkeit der Clarke’schen Richtungsableitung für jede beliebige Richtung <span class="process-math">\(v \in \mathbb{R}^n\)</span><details class="ptx-footnote" aria-live="polite" id="Bem1-2-1-2-1-4"><summary class="ptx-footnote__number" title="Footnote 2.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="Bem1-2-1-2-1-4">Man bemerke, dass Endlichkeit der Clarke’schen Richtungsableitung für jede Richtung <span class="process-math">\(v \in \mathbb{R}^n\)</span> jedoch nicht lokale Lipschitz-stetigkeit impliziert, da die Menge <span class="process-math">\(\{ L_{v,x} \, | \, v \in B_1(0)\}\)</span> nicht beschränkt sein muss.</div></details>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Bem1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#Bem1-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#Bem1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.6: Bemerkung 2.6"><a href="#Bem1" title="Copy heading and permalink for Remark 2.1.6: Bemerkung 2.6" aria-label="Copy heading and permalink for Remark 2.1.6: Bemerkung 2.6">🔗</a></div></article><details id="Bsp_Norm_fcirc" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Beispiel 2.7.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="Bsp_Norm_fcirc-2-1">
+<div class="para">Betrachte <span class="process-math">\(f\colon \mathbb{R}^n \rightarrow \mathbb{R}; x \mapsto \left\Vert x \right\Vert\)</span> eine beliebige Norm auf <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> Dann ist <span class="process-math">\(f\)</span> wegen der (umgekehrten) Dreiecksungleichung Lipschitz-stetig. Zudem gilt für <span class="process-math">\(y,v \in \mathbb{R}^n\)</span> und <span class="process-math">\(t &gt; 0\)</span> nach der Dreiecksungleichung:</div>
+<div class="displaymath process-math" id="Bsp_Norm_fcirc-2-1-6">
+\begin{equation*}
+f(y + tv) \leq f(y) + f(tv)
+\end{equation*}
+</div>
+<div class="para">und somit auch, wegen der positiven Homogenität von <span class="process-math">\(f\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="Bsp_Norm_fcirc-2-1-8">
+\begin{equation*}
+\limsup_{y\rightarrow x, \, t \searrow 0} \frac{f(y + tv) - f(y)}{t} \leq \limsup_{t \searrow 0} \frac{f(tv)}{t} = \left\Vert v \right\Vert.
+\end{equation*}
+</div>
+<div class="para">Gleichzeitig gilt für <span class="process-math">\(x = 0\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="Bsp_Norm_fcirc-2-1-10">
+\begin{equation*}
+\limsup_{y\rightarrow 0, \, t \searrow 0} \frac{f(y + tv) - f(y)}{t} \geq \limsup_{t \searrow 0} \frac{f(0 + tv) - f(0)}{t} = \left\Vert v \right\Vert,
+\end{equation*}
+</div>
+<div class="para">und somit <span class="process-math">\(f^\circ(0;v) = \left\Vert v \right\Vert\text{.}\)</span> Für die 1-norm <span class="process-math">\(\left\Vert \cdot \right\Vert_1\)</span> bemerken wir außerdem: Nach obiger Argumentation angewandt auf den Betrag als Norm auf <span class="process-math">\(\mathbb{R}\)</span> gilt für alle <span class="process-math">\(i \in \{1,\dots,n\} := [n]\)</span> mit <span class="process-math">\(x_i = 0\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="Bsp_Norm_fcirc-2-1-16">
+\begin{equation*}
+\limsup_{y_i\rightarrow x_i, \, t \searrow 0} \frac{|y + tv_i| - |y|}{t} = |v_i|.
+\end{equation*}
+</div>
+<div class="para">Ebenfalls bestimmen wir für <span class="process-math">\(i \in [n]\)</span> sodass <span class="process-math">\(x_i \neq 0\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="Bsp_Norm_fcirc-2-1-19">
+\begin{equation*}
+\limsup_{y_i\rightarrow x_i, \, t \searrow 0} \frac{|y_i + tv_i| - |y_i|}{t} = \limsup_{y_i\rightarrow x_i, \, t \searrow 0} \frac{sgn(x_i)(y_i + tv_i) - sgn(x_i)(y_i)}{t} = sgn(x_i)v_i.
+\end{equation*}
+</div>
+<div class="para">Folglich gilt also wegen der Linearität des <span class="process-math">\(\limsup\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="Bsp_Norm_fcirc-2-1-21">
+\begin{equation*}
+f^\circ(x;v) = \sum_{i \in [n]; \, x_i \neq 0}{sgn(x_i) v_i} + \sum_{i \in [n]; \, x_i = 0}|v_i|
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Bsp_Norm_fcirc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.7: Beispiel 2.7"><a href="#Bsp_Norm_fcirc" title="Copy heading and permalink for Example 2.1.7: Beispiel 2.7" aria-label="Copy heading and permalink for Example 2.1.7: Beispiel 2.7">🔗</a></div></article></details><div class="para" id="sec-ch2-definition-11">Wir gehen im nächsten Abschnitt näher auf die Eigenschaften der Clarke’schen Richtungsableitung ein. An dieser Stelle benötigen wir jedoch bereits die folgende Proposition, die die Definition des Clarke’schen Subdifferentials motiviert.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="PropBasicRichtung"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proposition 2.8.</span>
+</h3>
+<div class="para" id="PropBasicRichtung-2-1">Es gelte <a href="sec-ch2-definition.html#flokallip" class="xref" data-knowl="./knowl/xref/flokallip.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.1.2: Annahme 2.2">Definition 2.1.2</a>. Dann gilt:<div class="autopermalink" data-description="Paragraph"><a href="#PropBasicRichtung-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="PropBasicRichtung-2-2">
+<ol class="decimal" id="PropBasicRichtung-2-2-1">
+<li id="PropBasicRichtung-2-2-1-1">
+<div class="para logical" id="PropBasicRichtung-2-2-1-1-1">
+<div class="para">Die Abbildung <span class="process-math">\(v \mapsto f^\circ(x; v)\)</span> ist beschränkt auf <span class="process-math">\(B_1(0)\text{,}\)</span> positiv homogen und subadditiv auf <span class="process-math">\(\mathbb{R}^n\text{,}\)</span> und Lipschitz-stetig mit Lipschitz-Konstante <span class="process-math">\(L_x\text{.}\)</span> Insbesondere gilt:</div>
+<div class="displaymath process-math" id="PropBasicRichtung-2-2-1-1-1-5">
+\begin{equation*}
+|f^\circ (x;v)| \leq L_x \left\Vert v \right\Vert
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#PropBasicRichtung-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#PropBasicRichtung-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="PropBasicRichtung-2-2-1-2">
+<div class="para" id="PropBasicRichtung-2-2-1-2-1">
+<span class="process-math">\(f^\circ(x;v)\)</span> ist oberhalbstetig als Funktion in <span class="process-math">\((x, v)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#PropBasicRichtung-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#PropBasicRichtung-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="PropBasicRichtung-2-2-1-3">
+<div class="para" id="PropBasicRichtung-2-2-1-3-1">
+<span class="process-math">\(\displaystyle f^\circ(x;-v) = (-f)^\circ(x;v)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#PropBasicRichtung-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#PropBasicRichtung-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#PropBasicRichtung-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.1.8: Proposition 2.8"><a href="#PropBasicRichtung" title="Copy heading and permalink for Proposition 2.1.8: Proposition 2.8" aria-label="Copy heading and permalink for Proposition 2.1.8: Proposition 2.8">🔗</a></div></article><details id="PropBasicRichtung-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="PropBasicRichtung-3-1">Die Proposition lässt sich mithilfe gängiger Eigenschaften des <span class="process-math">\(\limsup\)</span> beweisen. Die Abschätzung in (i) ergibt sich direkt aus den Berechnungen in <a href="sec-ch2-definition.html#Bem1" class="xref" data-knowl="./knowl/xref/Bem1.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 2.1.6: Bemerkung 2.6">Remark 2.1.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#PropBasicRichtung-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.1.8.1"><a href="#PropBasicRichtung-3" title="Copy heading and permalink for Proof 2.1.8.1" aria-label="Copy heading and permalink for Proof 2.1.8.1">🔗</a></div></article></details><div class="para" id="sec-ch2-definition-13">Für die Definition des Clarke’schen Subdifferentials betrachten wir den aus der Funktionalanalysis bekannten Satz von Hahn-Banach, den wir hier aus <a href="refs-.html#WernerFA" class="xref" data-knowl="./knowl/xref/WernerFA.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 2: Funktionalanalysis">[2]</a> für endlich dimensionale Banachräume zitieren:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="HahnBanach"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Satz 2.9 (Hahn-Banach).</span>
+</h3>
+<div class="para logical" id="HahnBanach-2-1">
+<div class="para">Sei <span class="process-math">\(U \subset \mathbb{R}^n\)</span> ein Untervektorraum. Ferner seien <span class="process-math">\(p: \mathbb{R}^n \rightarrow \mathbb{R}\)</span> sublinear (d.h. subadditiv und positiv homogen) und <span class="process-math">\(l: U \rightarrow \mathbb{R}\)</span> linear sodass</div>
+<div class="displaymath process-math" id="HahnBanach-2-1-4">
+\begin{equation*}
+l(x) \leq p(x) \quad \forall x \in U.
+\end{equation*}
+</div>
+<div class="para">Dann existiert eine lineare Fortsetzung <span class="process-math">\(L: \mathbb{R}^n \rightarrow \mathbb{R}\text{,}\)</span> <span class="process-math">\(L|_{U} = l\)</span> sodass</div>
+<div class="displaymath process-math" id="HahnBanach-2-1-7">
+\begin{equation*}
+L(x) \leq p(x)\quad{\forall x\in\mathbb{R}^n}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#HahnBanach-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.1.9: Satz 2.9 (Hahn-Banach)"><a href="#HahnBanach" title="Copy heading and permalink for Theorem 2.1.9: Satz 2.9 (Hahn-Banach)" aria-label="Copy heading and permalink for Theorem 2.1.9: Satz 2.9 (Hahn-Banach)">🔗</a></div></article><div class="para" id="sec-ch2-definition-15">Mit der Wahl <span class="process-math">\(U = \{0\}\)</span> sagt <a href="sec-ch2-definition.html#HahnBanach" class="xref" data-knowl="./knowl/xref/HahnBanach.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.9: Satz 2.9 (Hahn-Banach)">Theorem 2.1.9</a> also aus: Jedes sublineare Funktional auf <span class="process-math">\(\mathbb{R}^n\)</span> majorisiert ein lineares Funktional auf <span class="process-math">\(\mathbb{R}^n\text{.}\)</span> Laut <a href="sec-ch2-definition.html#PropBasicRichtung" class="xref" data-knowl="./knowl/xref/PropBasicRichtung.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.1.8: Proposition 2.8">Proposition 2.1.8</a>(i) ist <span class="process-math">\(v \mapsto f^\circ(x; v)\)</span> ein solches sublineares Funktional.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-ch2-definition-16"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition 2.10.</span>
+</h3>
+<div class="para logical" id="sec-ch2-definition-16-2-1">
+<div class="para">Es gelte <a href="sec-ch2-definition.html#flokallip" class="xref" data-knowl="./knowl/xref/flokallip.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.1.2: Annahme 2.2">Definition 2.1.2</a>. Das <dfn class="terminology">Clarke’sche Subdifferential</dfn> von <span class="process-math">\(f\)</span> in <span class="process-math">\(x \in \mathbb{R}^n\)</span> ist die Menge</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/flokallip.html" id="Eq_Def_Subdiff">
+\begin{equation}
+\partial f(x) := \left \{ \xi \in \mathbb{R}^n: f^\circ(x; v) \geq \langle \xi, v \rangle \ \forall v \in \mathbb{R}^n\right \}.\tag{2.1.1}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.10: Definition 2.10"><a href="#sec-ch2-definition-16" title="Copy heading and permalink for Definition 2.1.10: Definition 2.10" aria-label="Copy heading and permalink for Definition 2.1.10: Definition 2.10">🔗</a></div></article><article class="remark remark-like" id="sec-ch2-definition-17"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bemerkung 2.11.</span>
+</h3>
+<div class="para" id="sec-ch2-definition-17-2">Die Elemente des topologischen Dualraumes des <span class="process-math">\(\mathbb{R}^n\)</span> lassen sich über das Skalarprodukt mit dem <span class="process-math">\(\mathbb{R}^n\)</span> identifizieren<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch2-definition-17-3">Für <span class="process-math">\((\mathbb{R}^n, \left\Vert  \right\Vert_2)\)</span> ist dies die Aussage des Riesz’schen Darstellungssatzes; man beachte dass jeder <span class="process-math">\(n\)</span>-dimensionale Banachraum zu diesem Raum isomorph ist. Die hier benötigte endlich-dimensionale Version lässt sich aber auch leicht direkt erkennen. .<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-17-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch2-definition-17-4">
+<div class="para">Diese Identifikation motiviert die obige Definition: Das Subdifferential besteht aus den Vektoren, die lineare Abbildungen definieren, die von der Clarke’schen Richtungsableitung majorisiert werden. Beachte, dass die Norm im Dualraum im Allgemeinen durch</div>
+<div class="displaymath process-math" id="sec-ch2-definition-17-4-1">
+\begin{equation*}
+\left\Vert \xi \right\Vert_* := \sup \left \{|\langle \xi, x\rangle|  : x \in B_1(0) \subset \mathbb{R}^n \right \}
+\end{equation*}
+</div>
+<div class="para">gegeben ist. Man überzeugt sich leicht, dass diese Norm genau der euklidschen Norm entspricht.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-17-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.11: Bemerkung 2.11"><a href="#sec-ch2-definition-17" title="Copy heading and permalink for Remark 2.1.11: Bemerkung 2.11" aria-label="Copy heading and permalink for Remark 2.1.11: Bemerkung 2.11">🔗</a></div></article><details id="sec-ch2-definition-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Beispiel 2.12.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-ch2-definition-18-2-1">
+<div class="para">Betrachte nochmals <span class="process-math">\(f = \left\Vert \cdot \right\Vert\text{.}\)</span> Dann gilt mit den Überlegungen aus <a href="sec-ch2-definition.html#Bsp_Norm_fcirc" class="xref" data-knowl="./knowl/xref/Bsp_Norm_fcirc.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.1.7: Beispiel 2.7">Example 2.1.7</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp_Norm_fcirc.html" id="sec-ch2-definition-18-2-1-3">
+\begin{equation*}
+\partial f(0) = \left \{ \xi \in \mathbb{R}^n: \left\Vert v \right\Vert \geq \langle \xi, v \rangle \ \forall v \in \mathbb{R}^n\right \}.
+\end{equation*}
+</div>
+<div class="para">Wir bemerken zunächst, dass diese Bedingung bei der Wahl <span class="process-math">\(v = 0\)</span> für alle <span class="process-math">\(\xi \in \mathbb{R}^n\)</span> erfüllt ist. Wir betrachten im folgenden also nur noch <span class="process-math">\(v \neq 0\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp_Norm_fcirc.html" id="sec-ch2-definition-18-2-1-7">
+\begin{equation*}
+\left\Vert v \right\Vert \geq \langle \xi, v \rangle \ \forall v \in \mathbb{R}^n \iff 1 \geq \frac{\langle \xi, v\rangle}{\left\Vert v \right\Vert} \ \forall v \in \mathbb{R}^n\setminus\{0\}.
+\end{equation*}
+</div>
+<div class="para">Wir betrachten nun zwei spezielle Fälle:</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-ch2-definition-18-2-2">
+<ol class="decimal" id="sec-ch2-definition-18-2-2-1">
+<li id="sec-ch2-definition-18-2-2-1-1">
+<div class="para logical" id="sec-ch2-definition-18-2-2-1-1-1">
+<div class="para">
+<span class="process-math">\(f = \left\Vert \cdot \right\Vert_2\text{.}\)</span> In diesem Fall folgt aus der Cauchy-Schwarz Ungleichung für alle <span class="process-math">\(\xi, v \in \mathbb{R}^n\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-ch2-definition-18-2-2-1-1-1-3">
+\begin{equation*}
+\frac{\langle \xi, v\rangle}{\left\Vert v \right\Vert_2} \leq \frac{\left\Vert \xi \right\Vert_2 \left\Vert v \right\Vert_2}{\left\Vert v \right\Vert_2} = \left\Vert \xi \right\Vert_2,
+\end{equation*}
+</div>
+<div class="para">wobei mit der Wahl <span class="process-math">\(v = \xi\)</span> Gleichheit gilt. Folglich ist</div>
+<div class="displaymath process-math" id="sec-ch2-definition-18-2-2-1-1-1-5">
+\begin{equation*}
+1 \geq \frac{\langle \xi, v\rangle}{\left\Vert v \right\Vert} \ \forall v \in \mathbb{R}^n
+\end{equation*}
+</div>
+<div class="para">äquivalent zu <span class="process-math">\(\left\Vert \xi \right\Vert_2 \leq 1\)</span> und somit</div>
+<div class="displaymath process-math" id="sec-ch2-definition-18-2-2-1-1-1-7">
+\begin{equation*}
+\partial f(0) = \bar B_{\left\Vert \cdot \right\Vert_2}(0,1).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-18-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-ch2-definition-18-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch2-definition-18-2-2-1-2">
+<div class="para logical" id="sec-ch2-definition-18-2-2-1-2-1">
+<div class="para">
+<span class="process-math">\(f = \left\Vert \cdot \right\Vert_1\text{.}\)</span> Mithilfe von <a href="sec-ch2-definition.html#Bsp_Norm_fcirc" class="xref" data-knowl="./knowl/xref/Bsp_Norm_fcirc.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.1.7: Beispiel 2.7">Example 2.1.7</a> können wir das Clarke’sche Subdifferential von <span class="process-math">\(\left\Vert \cdot \right\Vert_1\)</span> sogar für allgemeine <span class="process-math">\(x \in \mathbb{R}^n\)</span> bestimmen: Hierfür bemerken wir zunächst für alle <span class="process-math">\(i \in [n]\)</span> sodass <span class="process-math">\(x_i \neq 0\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp_Norm_fcirc.html ./knowl/xref/Eq_Def_Subdiff.html ./knowl/xref/Eq_Def_Subdiff.html" id="sec-ch2-definition-18-2-2-1-2-1-7">
+\begin{align*}
+f^\circ(x; -e_i) \amp = -\operatorname{sgn}(x_i) \\
+\langle \xi, -e_i\rangle &amp;= -\xi_i,
+\end{align*}
+</div>
+<div class="para">sowie</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp_Norm_fcirc.html ./knowl/xref/Eq_Def_Subdiff.html ./knowl/xref/Eq_Def_Subdiff.html" id="sec-ch2-definition-18-2-2-1-2-1-8">
+\begin{align*}
+f^\circ(x; e_i) \amp = \operatorname{sgn}(x_i) \\
+\langle \xi, e_i\rangle \amp = \xi_i. 
+\end{align*}
+</div>
+<div class="para">Wenn <span class="process-math">\(\xi \in \partial f(x)\)</span> sein soll, muss mit der Wahl <span class="process-math">\(v = \pm e_i\)</span> also gelten:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp_Norm_fcirc.html ./knowl/xref/Eq_Def_Subdiff.html ./knowl/xref/Eq_Def_Subdiff.html" id="sec-ch2-definition-18-2-2-1-2-1-11">
+\begin{equation*}
+\operatorname{sgn}(x_i) \geq \xi_i \geq \operatorname{sgn}(x_i),
+\end{equation*}
+</div>
+<div class="para">wobei die erste Relation mit <span class="process-math">\(v = e_i\text{,}\)</span> die zweite mit <span class="process-math">\(v = -e_i\)</span> aus <a href="sec-ch2-definition.html#Eq_Def_Subdiff" class="xref" data-knowl="./knowl/xref/Eq_Def_Subdiff.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a> folgt. Wir fixieren nun ein beliebiges <span class="process-math">\(\xi \in \mathbb{R}^n\)</span> mit <span class="process-math">\(\xi_i = \operatorname{sgn}(x_i)\)</span> wann immer <span class="process-math">\(x_i \neq 0\text{.}\)</span> Die Frage ist nun, wann <span class="process-math">\(\xi\)</span> im Subdifferential <span class="process-math">\(\partial f(x)\)</span> liegt. Hierfür bemerken wir:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp_Norm_fcirc.html ./knowl/xref/Eq_Def_Subdiff.html ./knowl/xref/Eq_Def_Subdiff.html" id="sec-ch2-definition-18-2-2-1-2-1-20">
+\begin{gather*}
+\langle \xi, v\rangle = \sum_{i \in [n]; \, x_i \neq 0} \operatorname{sgn}(x_i) v_i + \sum_{i \in [n]; \, x_i = 0} \xi_i v_i \\
+f^\circ(x;v) = \sum_{i \in [n]; \, x_i \neq 0} \operatorname{sgn}(x_i) v_i + \sum_{i \in [n]; \, x_i = 0} |v_i|.
+\end{gather*}
+</div>
+<div class="para">Somit reduziert sich die Bedingung aus <a href="sec-ch2-definition.html#Eq_Def_Subdiff" class="xref" data-knowl="./knowl/xref/Eq_Def_Subdiff.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a> also zu</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp_Norm_fcirc.html ./knowl/xref/Eq_Def_Subdiff.html ./knowl/xref/Eq_Def_Subdiff.html" id="sec-ch2-definition-18-2-2-1-2-1-22">
+\begin{equation*}
+\sum_{i \in [n]; \, x_i = 0} \xi_i v_i \leq \sum_{i \in [n]; \, x_i = 0} |v_i|
+\end{equation*}
+</div>
+<div class="para">für alle <span class="process-math">\(v \in \mathbb{R}^n\text{.}\)</span> Dies gilt offensichtlich, wenn <span class="process-math">\(v = 0\)</span> gilt. Für <span class="process-math">\(v \neq 0\)</span> beobachten wir, dass</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp_Norm_fcirc.html ./knowl/xref/Eq_Def_Subdiff.html ./knowl/xref/Eq_Def_Subdiff.html" id="sec-ch2-definition-18-2-2-1-2-1-26">
+\begin{equation*}
+\max_{v \in \mathbb{R}^n\setminus \{0\}} \frac{\sum_{i \in [n]; \, x_i = 0} \xi_i v_i }{\sum_{i \in [n]; \, x_i = 0} |v_i|} = \max_{i \in [n]; \, x_i = 0} |\xi_i|.
+\end{equation*}
+</div>
+<div class="para">Also gilt <span class="process-math">\(\xi \in \partial f(x)\)</span> genau dann, wenn <span class="process-math">\(\max_{i \in [n]; \, x_i = 0} |\xi_i| \leq 1\text{.}\)</span> Folglich gilt:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Bsp_Norm_fcirc.html ./knowl/xref/Eq_Def_Subdiff.html ./knowl/xref/Eq_Def_Subdiff.html" id="sec-ch2-definition-18-2-2-1-2-1-29">
+\begin{equation*}
+\partial f(x) = \left \{ \xi \in \mathbb{R}^n : \xi_i \in \begin{cases}
+[-1, 1] &amp; x_i = 0\\
+\left \{ \operatorname{sgn}(x_i) \right \} &amp; x_i \neq 0
+\end{cases}, \forall i \in [n]\right \}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-18-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-ch2-definition-18-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch2-definition-18-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.12: Beispiel 2.12"><a href="#sec-ch2-definition-18" title="Copy heading and permalink for Example 2.1.12: Beispiel 2.12" aria-label="Copy heading and permalink for Example 2.1.12: Beispiel 2.12">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.1: Definition"><a href="#sec-ch2-definition" title="Copy heading and permalink for Section 2.1: Definition" aria-label="Copy heading and permalink for Section 2.1: Definition">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-clarke-subdiff.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
