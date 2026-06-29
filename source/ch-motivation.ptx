@@ -7,8 +7,8 @@
 			Wir betrachten das Programmierproblem
 		</p>
 
-<fact xml:id="fact_Problem"><title>Problem 1</title>
-		<p>
+<fact xml:id="fact_Problem">
+		<p><term>Problem 1</term>
 			Sei <m>f\colon \mathbb{R}^n \rightarrow \mathbb{R}</m> eine Funktion. Gesucht ist eine Minimalstelle von <m>f</m> unter drei Arten von Nebenbedingungen:
 		</p>
 
@@ -33,10 +33,10 @@
 
 		</ol></p></fact>
 
-<remark><title>Bemerkung 1.1</title>
-		<p>
+<remark>
+		<p> <term>Bemerkung 1.1</term>
 			Wir erlauben hierbei die Fälle <m>p=0</m>, <m>m=0</m> und <m>C = \mathbb{R}^n</m> sodass also bspw. auch Probleme die nur Gleichungsnebenbedinungen haben abgedeckt sind.
-		</p><!--</remark>-->
+		</p>
 
 		<p>
 			Zur Lösung eines solchen Problems wird oft eine notwendige Optimalitätsbedingung genutzt, sodass es dann vergleichsweise leichter ist, unter den die Bedingung erfüllenden Punkten einen optimalen auszuwählen. Solche Methoden sind schon aus der Suche nach Minima und Maxima im Schulunterricht bekannt: Man bestimme alle Stellen an denen <m>f'(x) = 0</m> gilt und untersuche diese näher.<!-- linebreak -->Eine weitere solche Bedingung begegnet uns in der Vorlesung Analysis II: die Lagrange’sche Multiplikatorenregel.
@@ -44,7 +44,7 @@
   </remark>
 
 <theorem xml:id="thm_standard_KKT">
-		<title>Satz 1.2 Lagrange’sche Multiplikatorenregel</title>  <statement> <p>Sei  <m>U</m> eine offene 
+		<statement> <p> <term>Satz 1.2 Lagrange’sche Multiplikatorenregel</term>  Sei  <m>U</m> eine offene 
 			Umgebung von <m>\bar x\in\mathbb{R}^{n}</m>, <m>f\colon U\rightarrow \mathbb{R}</m> und
 			 <m>h\colon U\rightarrow \mathbb{R}^m</m> stetig differenzierbar und <m>Dh(\bar x)</m> 
 			 besitze vollen Zeilenrang. Hat die Funktion <m>f</m> unter der Nebenbedingung 
@@ -71,7 +71,7 @@ an der Stelle <m>(\bar x,\bar\lambda)</m> einen stationären Punkt hat.
 
 <example xml:id="Bsp1">
 		<p>
-			<term>Beispiel 3</term>.  
+			<term>Beispiel 1.3</term>.  
 			Sei <m>f \colon \mathbb{R}^n \rightarrow \mathbb{R}</m> eine stetig differenzierbare Funktion und <m>\sigma &gt; 0</m> eine Konstante. Wir betrachten die Zielfunktion 
 			<men>
         	\varphi(x) := f(x) + \sigma (\left\Vert x \right\Vert_1-\left\Vert x \right\Vert_2)
